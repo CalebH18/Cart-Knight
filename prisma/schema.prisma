@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Prod {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  imageURL    String
+  name        String
+  price       Int
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  CartItem    CartItem[]
+
+  @@map("product")
+}
+
+model Cart {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  items  CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("carts")
+}
+
+model CartItem {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  productID String @db.ObjectId
+  product   Prod   @relation(fields: [productID], references: [id], onDelete: Cascade)
+  quantity  Int
+  cartID    String @db.ObjectId
+  cart      Cart   @relation(fields: [cartID], references: [id], onDelete: Cascade)
+
+  @@map("cartitems")
+}
