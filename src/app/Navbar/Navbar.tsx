@@ -7,7 +7,7 @@ async function search_bar(formData: FormData) {
     "use server";
     const searchBar = formData.get("searchBar")?.toString();
     if (searchBar) {
-        redirect("/search?query" + searchBar);
+        redirect("/search?query=" + searchBar);
     }
 }
 
