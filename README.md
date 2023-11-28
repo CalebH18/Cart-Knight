@@ -1,3 +1,44 @@
+# CyberCapstone
+This is the repository for our cybersecurity capstone group project <br />
+Group Members: Caleb Heller, Julian Purgahn, James Bridges, Rajan Pokharel 
+
+# Lancelot: Cart Knight - Secure E-Commerce Website
+
+## Overview
+
+This repository contains the codebase for a secure e-commerce website designed to serve the local community. The project aims to provide a robust, user-friendly, and secure platform for individuals and businesses in the region to engage in e-commerce activities. The implementation adheres to cybersecurity best practices to ensure the safety and privacy of users' data.
+
+## Features
+
+- Secure user authentication and authorization mechanisms.
+- Encrypted communication protocols to protect sensitive information during transmission.
+- Robust data validation and sanitization to prevent common security vulnerabilities.
+- Implementation of secure coding practices to mitigate the risk of common cyber attacks.
+- Regular security assessments and vulnerability scans to identify and address potential threats.
+- Comprehensive documentation detailing security protocols and measures implemented.
+- 
+## Installation
+
+To set up the project locally, follow these steps:
+1. Clone the repository: `git clone https://github.com/CalebH18/Cart-Knight.git`
+2. Navigate to the project directory: `cd Cart-Knight`
+3. Install the necessary dependencies: `npm install`
+4. Configure the environment variables required for the project.
+5. Run the application: `npm start`
+
+## Usage
+
+In this section, we will go over the way to navigate the site giving full explanations on all the features. Be sure to include screenshots here for anything complicated and text to accompany the pictures. 
+
+## Security Measures
+
+In this section, we will write about the security protocol considered and their countermeasures:
+
+- Authentication and authorization mechanisms
+- Encryption protocols for data protection
+- Measures to prevent common cyber attacks (e.g., SQL injection, cross-site scripting)
+- Regular security assessments and vulnerability scans
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
