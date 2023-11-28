@@ -24,7 +24,8 @@ To set up the project locally, follow these steps:
 2. Navigate to the project directory: `cd Cart-Knight`
 3. Install the necessary dependencies: `npm install`
 4. Configure the environment variables required for the project.
-5. Run the application: `npm start`
+5. Add your database by adding the URL to a .env file: 'DATABASE_URL="*Your Database Link*"'
+6. Run the application: `npm start`
 
 ## Usage
 
