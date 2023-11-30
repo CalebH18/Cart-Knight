@@ -1,3 +1,4 @@
+// pages/about.js
 import React from 'react';
 
 const AboutUs = () => {
@@ -48,3 +49,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
