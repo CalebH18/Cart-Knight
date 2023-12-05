@@ -1,10 +1,19 @@
+"use client";
+
 import { FormPrice } from "@/library/FormPrice";
 import { ShoppingCart } from "@/library/database/cart";
+import Link from "next/link";
 
 interface ShopCartButtonProps {
     cart: ShoppingCart | null;
 }
 export default function ShopCartButton({cart}: ShopCartButtonProps) {
+    function closeDropdown(){
+        const elem = document.activeElement as HTMLElement
+        if (elem) {
+            elem.blur();
+        }
+    }
     return(
         <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn-ghost btn-circle btn">
@@ -34,6 +43,12 @@ export default function ShopCartButton({cart}: ShopCartButtonProps) {
                 <div className="card-body">
                     <span className="text-lg font-bold">{cart?.size || 0} Items</span>
                     <span className="text-info">Total: {FormPrice(cart?.subtotal || 0)}</span>
+                    <div className="card-actions">
+                        <Link
+                        href="/Cart"
+                        className="btn btn-primary btn-block"
+                        onClick={closeDropdown}>View Cart</Link>
+                    </div>
                 </div>
             </div>
         </div>
