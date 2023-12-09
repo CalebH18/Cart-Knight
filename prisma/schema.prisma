@@ -66,17 +66,20 @@ model Session {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   sessionToken String   @unique
   userId       String   @db.ObjectId
-  expires      DateTime
+  expires      DateTime @map("expiresAt")
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
 }
 
+
 model User {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
-  email         String?   @unique
-  emailVerified DateTime?
+  email         String?     @unique
+  hashedPassword      String?
+  createdAt     DateTime    @default(now())
+  emailVerified DateTime?   @map("verifiedAt")
   image         String?
   accounts      Account[]
   sessions      Session[]
@@ -85,11 +88,12 @@ model User {
   @@map("users")
 }
 
+
 model VerificationToken {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   identifier String
   token      String   @unique
-  expires    DateTime
+  expires    DateTime @map("expiresAt")
 
   @@unique([identifier, token])
   @@map("verificationtokens")
