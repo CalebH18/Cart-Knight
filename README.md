@@ -22,7 +22,7 @@ This repository contains the codebase for a secure e-commerce website designed t
 To set up the project locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/CalebH18/Cart-Knight.git`
 2. Navigate to the project directory: `cd Cart-Knight`
-3. Install the necessary dependencies: `npm install`
+3. Install the necessary dependencies: `npm install` and `npm install bcrypt`
 4. Configure the environment variables required for the project.
 5. Add your database by adding the URL to a .env file: 'DATABASE_URL="*Your Database Link*"'
 6. Run the application: `npm start`
