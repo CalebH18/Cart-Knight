@@ -25,7 +25,7 @@ To set up the project locally, follow these steps:
 3. Install the necessary dependencies: `npm install` and `npm install bcrypt`
 4. Configure the environment variables required for the project.
 5. Add your database by adding the URL to a .env file: 'DATABASE_URL="*Your Database Link*"'
-6. Run the application: `npm start`
+6. Run the application: `npm run dev`
 
 ## Usage
 
@@ -48,12 +48,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
