@@ -16,21 +16,8 @@ export const authOpt: NextAuthOptions = {
         GoogleProvider({
             clientId: env.GOOGLE_CLIENT_ID,
             clientSecret: env.GOOGLE_CLIENT_SECRET
-        })
-    ],
-    callbacks: {
-        session({session, user}) {
-            session.user.id = user.id
-            return session;
-        },
-    },
-    events: {
-        async signIn({user}) {
-            await mergeAnonToUser(user.id);
-        }
-    }
-},
-CredentialsProvider({
+        }),
+        CredentialsProvider({
         	name: "Credentials",
         	credentials: {
             	email: { label: "email", type: "text", placeholder: "x@example.com" },
@@ -62,12 +49,22 @@ CredentialsProvider({
 	session: {
     strategy: "jwt"
   },
-secret: env.NEXTAUTH_SECRET
+
+    secret: env.NEXTAUTH_SECRET,
+
+    callbacks: {
+        session({session, user}) {
+            session.user.id = user.id
+            return session;
+        },
+    },
+    events: {
+        async signIn({user}) {
+            await mergeAnonToUser(user.id);
+        }
+    }
 }
 
 
 const handler = NextAuth(authOpt);
 export { handler as GET, handler as POST }
-
-
-
