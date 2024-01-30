@@ -16,7 +16,7 @@ This repository contains the codebase for a secure e-commerce website designed t
 - Implementation of secure coding practices to mitigate the risk of common cyber attacks.
 - Regular security assessments and vulnerability scans to identify and address potential threats.
 - Comprehensive documentation detailing security protocols and measures implemented.
-- 
+
 ## Installation
 
 To set up the project locally, follow these steps:
