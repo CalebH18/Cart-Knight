@@ -2,6 +2,7 @@ import { getCart } from "@/library/database/cart";
 import Entry from "./Entry"
 import { setProductQuantity } from "./actions";
 import { FormPrice } from "@/library/FormPrice";
+import Link from "next/link";
 
 export const metadata = {
     title: "Your Cart - CartKnight",
@@ -21,7 +22,12 @@ export default async function CartPage(){
                 <p className="mb-3 font-bold">
                     Total: {FormPrice(cart?.subtotal || 0)}
                 </p>
-                <button className="btn btn-primary sm:w-[200px]">Check Out</button>
+            </div>
+            <div className="card-actions">
+                <Link
+                href="/CheckOut"
+                className="btn btn-primary btn-block"
+                >Check Out</Link>
             </div>
         </div>
     );
