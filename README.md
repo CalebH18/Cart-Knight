@@ -22,10 +22,11 @@ This repository contains the codebase for a secure e-commerce website designed t
 To set up the project locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/CalebH18/Cart-Knight.git`
 2. Navigate to the project directory: `cd Cart-Knight`
-3. Install the necessary dependencies: `npm install` and `npm install bcrypt`
+3. Install the necessary dependencies: `npm install`, `npm install bcrypt`, `npm install @paypal/react-paypal-js`, and `npm install @paypal/checkout-server-sdk`
 4. Configure the environment variables required for the project.
 5. Add your database by adding the URL to a .env file: 'DATABASE_URL="*Your Database Link*"'
-6. Run the application: `npm run dev`
+6. Add your Paypal Keys to the .env file
+7. Run the application: `npm run dev`
 
 ## Usage
 
