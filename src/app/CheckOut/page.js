@@ -4,7 +4,7 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 function CheckOut() {
   return (
-    <div className="h-screen bg-slate-900 flex items-center justify-center">
+    <div className="h-screen bg-white flex items-center justify-center">
       <PayPalScriptProvider
         options={{
           clientId:
@@ -12,7 +12,7 @@ function CheckOut() {
         }}
       >
         <PayPalButtons
-          style={{ layout: "vertical", color: "silver" }}
+          style={{ layout: "vertical", color: "gold" }}
           createOrder={async (data, actions) => {
             const res = await fetch("/api/checkout", {
               method: "POST",
