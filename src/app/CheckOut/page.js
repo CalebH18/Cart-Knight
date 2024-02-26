@@ -1,6 +1,5 @@
 "use client";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-//import { env } from "@/library/env";
 
 function CheckOut() {
   return (
@@ -8,7 +7,7 @@ function CheckOut() {
       <PayPalScriptProvider
         options={{
           clientId:
-          "INSERT_CLIENT_ID",
+          process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
         }}
       >
         <PayPalButtons
