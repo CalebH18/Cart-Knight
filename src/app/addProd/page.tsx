@@ -2,7 +2,7 @@ import FSButton from "@/comps/FSButton";
 import { prisma } from "@/library/database/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOpt } from "../api/auth/[...nextauth]/route";
+import authOptions from "../api/auth/[...nextauth]/options";
 async function add_Product(formData: FormData) {
     "use server";
     const name=formData.get("name")?.toString();
@@ -18,7 +18,7 @@ async function add_Product(formData: FormData) {
     redirect("/")
 }
 export default async function addProdPage() {
-    const sess= await getServerSession(authOpt);
+    const sess= await getServerSession(authOptions);
     if(!sess){
         return(<div>Sorry, you do not have access to that</div>)
     }
@@ -41,18 +41,18 @@ export default async function addProdPage() {
                 <input
                     required
                     name="imageURL"
-                    placeholder="URL pls"
+                    placeholder="URL from unsplash"
                     type="url"
                     className="input input-bordered mb-3 w-full"
                 />
                 <input
                     required
                     name="price"
-                    placeholder="moneyz cost"
+                    placeholder="cost in cents"
                     type="number"
                     className="input input-bordered mb-3 w-full"
                 />
-                <FSButton className="btn-block">Add that bad boy</FSButton>
+                <FSButton className="btn-block">Add it</FSButton>
             </form>
         </div>
     )
