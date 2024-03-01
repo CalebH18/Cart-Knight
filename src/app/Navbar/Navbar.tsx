@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import ShopCartButton from "./ShopCartButton";
 import UserButton from "./UserButton";
 import { getServerSession } from "next-auth";
-import { authOpt } from "../api/auth/[...nextauth]/route";
+import authOptions from "../api/auth/[...nextauth]/options";
 
 async function search_bar(formData: FormData) {
     "use server";
@@ -16,7 +16,7 @@ async function search_bar(formData: FormData) {
 
 export default async function Navbar() {
     const cart = await getCart();
-    const sess= await getServerSession(authOpt);
+    const sess= await getServerSession(authOptions);
     return(
         <div className="bg-base-100">
             <div className="navbar max-w-7xl m-auto flex-col sm:flex-row gap-2">
