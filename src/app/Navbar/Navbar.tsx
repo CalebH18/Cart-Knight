@@ -23,6 +23,9 @@ export default async function Navbar() {
                 <div className="flex-1">
                     <Link href="/" className="btn btn-ghost text-xl">Lancelot</Link>
                 </div>
+                <div className="flex-2">
+                    <Link href="/Disclaimer" className="btn btn-ghost text-xl text-red-500">Disclaimer</Link>
+                </div>
                 <div>
                     <Link href="/About">About Us</Link>
                 </div>
