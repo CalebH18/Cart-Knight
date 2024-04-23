@@ -29,6 +29,7 @@ function CheckOut() {
           onApprove={(data, actions) => {
             console.log("Approved:", data);
             actions.order.capture();
+            window.location.href = "/thankYou";
           }}
         />
       </PayPalScriptProvider>
